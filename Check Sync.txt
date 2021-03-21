@@ -1,3 +1,23 @@
 This File is to check sync with GitHub
 
-hi
+Converted to PHP
+
+Created DataBase
+CMS
+
+Tables 
+1. "categories "- Columns 2
+    id (int) length 3 PrimaryKey AI
+    title (varchar) length 255
+
+2. "posts" Columns 10
+    post_id (int) length 3 PrimaryKey AI
+    post_category_id
+    post_title
+	post_author    
+    post_date
+    post_image
+    post_content
+    post_tags
+    post_comment_count
+    post_status
