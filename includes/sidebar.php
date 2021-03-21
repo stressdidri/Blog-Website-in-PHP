@@ -31,7 +31,7 @@ $select_categories_sidebar = mysqli_query($connection,$query);
 
 while($row=mysqli_fetch_assoc($select_categories_sidebar))
 {
-    $cat_title= $row["title"];
+    $cat_title= $row["cat_title"];
     echo "<li><a href='#'>{$cat_title}</a></li>";
 }
 
@@ -41,5 +41,6 @@ while($row=mysqli_fetch_assoc($select_categories_sidebar))
             <!-- /.row -->
           </div>
           <!-- Side Widget Well -->
-<?php include "widget.php" ?>
+
         </div>
+<?php include "widget.php" ?>
