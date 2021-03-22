@@ -29,7 +29,20 @@
             </div>
         </form>
 </div>
-
+<div class="col-xs-6">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>ID</th>
+            <th>Category Title</th>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Baseball Category</td>
+            <td>Baseball Category</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
         </div>
