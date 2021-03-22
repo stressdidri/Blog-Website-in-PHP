@@ -13,7 +13,7 @@
 
 
               <h1 class="page-header">
-                Wlcome to Admin: 
+                Welcome to Admin: 
                 <small>Author   </small>
               </h1>
             </div>

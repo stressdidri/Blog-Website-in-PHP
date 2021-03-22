@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h1 class="page-header">
-            Wlcome to Admin: 
+            Welcome to Admin: 
             <small>Author   </small>
           </h1>
 <!-- START -->
@@ -40,8 +40,13 @@ if(isset($_GET['edit']))
 
     <table class="table table-bordered table-hover">
         <thead>
+        <tr>
             <th>ID</th>
             <th>Category Title</th>
+            <th>Delete</th>
+            <th>Update</th>
+
+        </tr>
         </thead>
         <tbody>
 
