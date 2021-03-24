@@ -56,8 +56,6 @@
        <input type="text" class="form-control" name="post_status">
     </div>
       
-      
-      
     <div class="form-group">
         <label for="post_image">Post Image</label>
         <input type="file"  name="image">
