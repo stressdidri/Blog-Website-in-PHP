@@ -20,8 +20,9 @@
 
     switch($source)
     {
-      case '1':
-        echo "Nice";
+      case 'add_post':
+        include "includes/add_posts.php";
+
         break;
       case '2':
           echo "Nice";
@@ -30,7 +31,7 @@
           echo "Nice";
           break; 
       default:
-          include "includes/view_all_post.php";
+          include "includes/view_all_posts.php";
           break; 
     }
           
