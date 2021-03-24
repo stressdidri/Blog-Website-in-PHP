@@ -21,15 +21,15 @@
     }
     switch($source)
     {
-      case 'add_post':
-        include "includes/add_posts.php";
+      case 'add_user':
+        include "includes/add_user.php";
 
         break;
-      case 'edit_post':
-        include "includes/edit_posts.php";
+      case 'edit_user':
+        include "includes/edit_users.php";
           break;
       default:
-          include "includes/view_all_posts.php";
+          include "includes/view_all_users.php";
           break; 
     }
 ?>
