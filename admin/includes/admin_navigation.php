@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">TB Admin</a>
+          <a class="navbar-brand" href="index.php">TB Admin</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li>
-              <a href="index.html"
+              <a href="index.php"
                 ><i class="fa fa-fw fa-dashboard"></i> Dashboard</a
               >
             </li>
