@@ -11,34 +11,30 @@
             Welcome to Admin: 
             <small>Author   </small>
           </h1>
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Image</th>
-                <th>Tags</th>
-                <th>Comments</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>Peeyush</td>
-                <td>JavaScript</td>
-                <td>Programming</td>
-                <td>Active</td>
-                <td>Image</td>
-                <td>Tags</td>
-                <td>Comment</td>
-                <td>22/01/2021</td>
-              </tr>
-            </tbody>
-          </table>
+<?php 
+         
+    if(isset($_GET['source']))
+    {
+      $source=$_GET['source'];
+    }
+
+    switch($source)
+    {
+      case '1':
+        echo "Nice";
+        break;
+      case '2':
+          echo "Nice";
+          break;
+      case '3':
+          echo "Nice";
+          break; 
+      default:
+          include "includes/view_all_post.php";
+          break; 
+    }
+          
+?>
 
 
         </div>
