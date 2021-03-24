@@ -79,6 +79,10 @@ if(isset($_POST['create_comment'])) {
             die('QUERY FAILED' . mysqli_error($connection));
         }
     }
+
+    $query="UPDATE posts SET post_comment_count=post_comment_count+1 WHERE post_id=$the_post_id ";
+    $update_comment_count=mysqli_query($connection, $query);
+
 }
 ?> 
         <!-- Comments Form -->
@@ -104,7 +108,7 @@ if(isset($_POST['create_comment'])) {
             </form>
         </div>
         <hr>
-<!-- here -->
+
 <?php 
           $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
           $query .= "AND comment_status = 'approved' ";
@@ -137,13 +141,7 @@ if(isset($_POST['create_comment'])) {
                     </div>
                  </div>
       
-<?php } 
-// } 
-// else {
-//         header("Location: index.php");
-//       }
-?>
-<!-- end here -->
+<?php } ?>
             
              </div>
              <!-- Blog Sidebar Widgets Column -->  
