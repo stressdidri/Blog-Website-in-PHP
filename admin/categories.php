@@ -26,7 +26,7 @@ insert_categories();
                 <input class="btn btn-primary" type="submit" name="submit" value="Add Category ">
             </div>
         </form>
-
+        
 <?php //Update and Include
 if(isset($_GET['edit']))
 {

@@ -1,6 +1,3 @@
-
-
-
 <table class="table table-bordered table-hover">
             <thead>
               <tr>
@@ -61,22 +58,13 @@ while($row=mysqli_fetch_assoc($select_posts))
     echo "<td>$post_date</td>";
     echo "<td><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
     echo "<td><a href='posts.php?delete=$post_id'>Delete</a></td>";
-
-
-
     echo "</tr>";
-
 }
-
-
-
 ?>
 
             </tbody>
           </table>
-
 <?php 
-
 if(isset($_GET['delete']))
 {
   $the_post_id=$_GET['delete'];

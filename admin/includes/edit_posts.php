@@ -21,7 +21,6 @@ while($row=mysqli_fetch_assoc($select_posts_by_id))
     $post_date= $row["post_date"];
 }
 
-
 if(isset($_POST['update_post'])) 
 {
     $post_author =  $_POST['post_author'];
@@ -60,18 +59,12 @@ if(isset($_POST['update_post']))
            $post_image = $row['post_image'];
         
         }
-
 }
 }
-
 ?>
 
-
-
-
 <form action="" method="post" enctype="multipart/form-data">    
-     
-     
+
      <div class="form-group">
         <label for="title">Post Title</label>
          <input type="text" class="form-control" name="post_title" value='<?php echo $post_title; ?>'>
@@ -79,7 +72,7 @@ if(isset($_POST['update_post']))
 
       <div class="form-group">
       <select name="post_category" id="post_category">
-      <?php 
+    <?php 
       $query = "SELECT * FROM categories";
       $select_categories = mysqli_query($connection,$query);
       confirmQuery($select_categories);
@@ -90,17 +83,15 @@ if(isset($_POST['update_post']))
 
           echo "<option value='$cat_id'>$cat_title</option>";
       }
-      
-      ?>
+    ?>
       </select>
-     
      </div>
 
 
       <div class="form-group">
       <label for="author">Post Author</label>
       <input type="text" class="form-control" name="post_author" value='<?php echo $post_author; ?>' > 
-     </div> 
+      </div> 
 
       <div class="form-group">
       <label for="post_status">Post Status</label>
@@ -109,26 +100,23 @@ if(isset($_POST['update_post']))
      
      
      
-   <div class="form-group">
-   <img width='100' src="../images/<?php echo $post_image; ?>" alt="">
-   <input type="file"  name="image">
+      <div class="form-group">
+      <img width='100' src="../images/<?php echo $post_image; ?>" alt="">
+      <input type="file"  name="image">
+      </div>
 
-     </div>
-
-     <div class="form-group">
+      <div class="form-group">
         <label for="post_tags">Post Tags</label>
-         <input type="text" class="form-control" name="post_tags" value='<?php echo $post_tags; ?>'>
-     </div>
+        <input type="text" class="form-control" name="post_tags" value='<?php echo $post_tags; ?>'>
+      </div>
      
-     <div class="form-group">
+      <div class="form-group">
         <label for="post_content">Post Content</label>
         <textarea class="form-control "name="post_content" id="body" cols="30" rows="10"><?php echo $post_content; ?>
         </textarea>
-     </div>
+      </div>
 
       <div class="form-group">
          <input class="btn btn-primary" type="submit" name="update_post" value="Publish Post">
-     </div>
-
-
+      </div>
 </form>

@@ -11,8 +11,7 @@
             Welcome to Admin: 
             <small>Author   </small>
           </h1>
-<?php 
-         
+<?php         
     if(isset($_GET['source']))
     {
       $source=$_GET['source'];
@@ -37,8 +36,6 @@
           break; 
     }
 ?>
-
-
         </div>
       </div>
       <!-- /.row -->

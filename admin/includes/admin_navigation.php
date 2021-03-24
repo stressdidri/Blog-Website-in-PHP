@@ -34,8 +34,6 @@
           </li>
         </ul>
 
-
-
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
@@ -64,7 +62,6 @@
                 ><i class="fa fa-fw fa-wrench"></i> Categories</a
               >
             </li>
- 
             <li >
               <a href="blank-page.html"
                 ><i class="fa fa-fw fa-file"></i> Comments</a
