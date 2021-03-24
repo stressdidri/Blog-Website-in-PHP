@@ -17,7 +17,9 @@
     {
       $source=$_GET['source'];
     }
-
+    else{
+      $source='';
+    }
     switch($source)
     {
       case 'add_post':
@@ -34,7 +36,6 @@
           include "includes/view_all_posts.php";
           break; 
     }
-          
 ?>
 
 
