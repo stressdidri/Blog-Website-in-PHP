@@ -63,7 +63,7 @@
               >
             </li>
             <li >
-              <a href="blank-page.html"
+              <a href="./comments.php"
                 ><i class="fa fa-fw fa-file"></i> Comments</a
               >
             </li>
