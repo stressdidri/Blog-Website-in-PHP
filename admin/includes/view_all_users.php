@@ -37,8 +37,8 @@ while($row=mysqli_fetch_assoc($select_users))
     echo "<td>$user_role</td>";
 
 
-    echo "<td><a href='comments.php?approve='>Approve</a></td>";
-    echo "<td><a href='comments.php?unapprove='>Unapprove</a></td>";
+    echo "<td><a href='users.php?change_to_admin=$user_id'>Admin</a></td>";
+    echo "<td><a href='users.php?change_to_sub=$user_id'>Subscriber</a></td>";
 
     echo "<td><a href='users.php?delete=$user_id'>Delete</a></td>";
     echo "</tr>";
@@ -47,22 +47,22 @@ while($row=mysqli_fetch_assoc($select_users))
             </tbody>
           </table>
 <?php 
-if(isset($_GET['approve']))
+if(isset($_GET['change_to_sub']))
 {
-  $the_comment_id=$_GET['approve'];
-  $query = "UPDATE comments SET comment_status = 'approved' WHERE comment_id=$the_comment_id";
+  $the_user_id=$_GET['change_to_sub'];
+  $query = "UPDATE users SET user_role = 'Subscriber' WHERE user_id=$the_user_id";
 
-  $approve_comment_query=mysqli_query($connection,$query);
-  header ("Location:comments.php");
+  $change_to_sub_query=mysqli_query($connection,$query);
+  header ("Location:users.php");
 }
 
-if(isset($_GET['unapprove']))
+if(isset($_GET['change_to_admin']))
 {
-  $the_comment_id=$_GET['unapprove'];
-  $query = "UPDATE comments SET comment_status = 'unapproved' WHERE comment_id=$the_comment_id";
+  $the_user_id=$_GET['change_to_admin'];
+  $query = "UPDATE users SET user_role = 'Admin' WHERE user_id=$the_user_id";
 
-  $unapprove_comment_query=mysqli_query($connection,$query);
-  header ("Location:comments.php");
+  $change_to_admin_query=mysqli_query($connection,$query);
+  header ("Location:users.php");
 }
 
 if(isset($_GET['delete']))
