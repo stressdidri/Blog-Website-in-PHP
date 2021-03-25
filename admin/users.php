@@ -26,7 +26,7 @@
 
         break;
       case 'edit_user':
-        include "includes/edit_users.php";
+        include "includes/edit_user.php";
           break;
       default:
           include "includes/view_all_users.php";

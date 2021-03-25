@@ -34,7 +34,6 @@ while($row=mysqli_fetch_assoc($select_comments))
     echo "<td>$comment_id</td>";
     echo "<td>$comment_author</td>";
     echo "<td>$comment_content</td>";
-    echo "<td>$comment_status</td>";
     echo "<td>$comment_email</td>";
     echo "<td>$comment_status</td>";
 
@@ -49,7 +48,7 @@ while($row=mysqli_fetch_assoc($select_comments))
 
 
     }
-   
+
     echo "<td>$comment_date</td>";
 
     echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";

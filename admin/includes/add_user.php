@@ -1,23 +1,23 @@
 <?php
    if(isset($_POST['create_user'])) {
    
-            $user_id= $_POST['user_id'];
             $user_firstname = $_POST['user_firstname'];
             $user_lastname = $_POST['user_lastname'];
-            $role = $_POST['role'];
+            $user_role = $_POST['user_role'];
             // $post_image = $_FILES['image']['name'];
             // $post_image_temp = $_FILES['image']['tmp_name'];
    
             $username = $_POST['username'];
             $user_email = $_POST['user_email'];
             $user_password = $_POST['user_password'];
-            // $post_date = date('d-m-y');
+
+            // $user_date = date('d-m-y');
 
         // move_uploaded_file($post_image_temp, "../images/$post_image" );
 
-        $query = "INSERT INTO users(user_id, user_firstname, user_lastname, role , username,user_email,user_password) ";
-
-        $query .= "VALUES({$user_id},'{$user_firstname}','{$user_lastname}','{$role}','{$user_email}','{$user_password}', '{$username}') ";
+        $query = "INSERT INTO users(user_firstname, user_lastname, user_role,username,user_email,user_password) ";
+                 
+        $query .= "VALUES('{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}', '{$user_password}') "; 
 
         $create_user_query = mysqli_query($connection, $query); 
 
@@ -28,35 +28,25 @@
     <div class="form-group">
        <label for="user_firstname">Firstname</label>
        <input type="text" class="form-control" name="user_firstname">      
-    </div>  
+    </div> 
 
     <div class="form-group">
        <label for="user_lastname">Lastname</label>
        <input type="text" class="form-control" name="user_lastname">
     </div>
-      
 
        <div class="form-group">
-       <select name="role" id="">
-<!-- <?php 
-      $query = "SELECT * FROM users";
-      $select_user = mysqli_query($connection,$query);
-      confirmQuery($select_user);
-      while($row=mysqli_fetch_assoc($select_user))
-      {
-          $user_id= $row["user_id"];
-          $user_role= $row["role"];
-          echo "<option value='$user_id'>$role</option>";
-      }
-      
-?> -->
-       <option value="subscriber">Select Option</option>
-       <option value="admin">Admin</option>
-       <option value="subscriber">Subscriber</option>
+       <select name="user_role">
+       <option value="subscriber">Select Options</option>
+       <option value="Admin">Admin</option>
+       <option value="Subscriber">Subscriber</option>
+
+
       </select>
     </div>
 
-   
+
+      
     <!-- <div class="form-group">
         <label for="post_image">Post Image</label>
         <input type="file"  name="image">
@@ -69,12 +59,11 @@
       
     <div class="form-group">
         <label for="user_email">Email</label>
-        <input class="form-control "name="user_email" id="body"></input>
+        <input type="email" class="form-control" name="user_email">
     </div>
-
     <div class="form-group">
         <label for="user_password">Password</label>
-        <input class="form-control "name="user_password" id="body" ></input>
+        <input type="password" class="form-control" name="user_password">
     </div>
 
     <div class="form-group">

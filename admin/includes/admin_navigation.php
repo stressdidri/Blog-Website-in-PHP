@@ -74,10 +74,10 @@
               ></a>
               <ul id="demo" class="collapse">
                 <li>
-                  <a href="users.php">View all users</a>
+                  <a href="./users.php">View all Users</a>
                 </li>
                 <li>
-                  <a href="users.php?source=add_user">Add users</a>
+                  <a href="users.php?source=add_user">Add User</a>
                 </li>
               </ul>
             </li>
@@ -85,6 +85,9 @@
               <a href="blank-page.html"
                 ><i class="fa fa-fw fa-dashboard"></i> Profile</a
               >
+            </li>
+            <li>
+                <a href="../includes/logout.php"><i class="fa fa-fw-dashboard"></i></a>
             </li>
           </ul>
         </div>
