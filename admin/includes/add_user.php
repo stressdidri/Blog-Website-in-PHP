@@ -38,8 +38,8 @@
        <div class="form-group">
        <select name="user_role">
        <option value="subscriber">Select Options</option>
-       <option value="admin">Admin</option>
-       <option value="subscriber">Subscriber</option>
+       <option value="Admin">Admin</option>
+       <option value="Subscriber">Subscriber</option>
 
 
       </select>
