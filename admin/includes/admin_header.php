@@ -36,5 +36,8 @@ if(!isset($_SESSION['user_role']))
       rel="stylesheet"
       type="text/css"
     />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
   </head>
   <body>
