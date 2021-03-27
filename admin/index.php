@@ -139,13 +139,13 @@ echo "<div class='huge'>$category_count</div>";
 
 <?php 
 
-$query = "SELECT * FROM posts WHERE post_status = 'published' ";
+$query = "SELECT * FROM posts WHERE post_status = 'Published' ";
 $select_all_published_posts = mysqli_query($connection,$query);
 $post_published_count = mysqli_num_rows($select_all_published_posts);
                                      
 
                                       
-$query = "SELECT * FROM posts WHERE post_status = 'draft' ";
+$query = "SELECT * FROM posts WHERE post_status = 'Draft' ";
 $select_all_draft_posts = mysqli_query($connection,$query);
 $post_draft_count = mysqli_num_rows($select_all_draft_posts);
 

@@ -1,6 +1,39 @@
+<?php 
+if(isset($_POST['checkBoxArray'])) {
+  foreach($_POST['checkBoxArray'] as $checkBoxValue){
+    $bulk_options = $_POST['bulk_options'];
+  }
+
+}
+?>
+
+
+
+<form action="" method="post">
+
 <table class="table table-bordered table-hover">
+
+<div id="bulkOptionContainer" class="col-xs-4">
+
+<select class="form-control" name="bulk_options" id="">
+<option value="">Select Options</option>
+<option value="published">Publish</option>
+<option value="draft">Draft</option>
+<option value="delete">Delete</option>
+ <option value="clone">Clone</option>
+</select>
+
+</div> 
+
+    
+<div class="col-xs-4">
+<input type="submit" name="submit" class="btn btn-success" value="Apply">
+<a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
+</div>
+ 
             <thead>
               <tr>
+                <th><input id="selectAllBoxes" type="checkbox"></th>
                 <th>ID</th>
                 <th>Author</th>
                 <th>Title</th>
@@ -34,6 +67,10 @@ while($row=mysqli_fetch_assoc($select_posts))
 
 
     echo "<tr>";
+?>
+
+    <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $post_id; ?>'></td>
+<?php
     echo "<td>$post_id</td>";
     echo "<td>$post_author</td>";
     echo "<td>$post_title</td>";
@@ -64,6 +101,7 @@ while($row=mysqli_fetch_assoc($select_posts))
 
             </tbody>
           </table>
+          </form>
 <?php 
 if(isset($_GET['delete']))
 {

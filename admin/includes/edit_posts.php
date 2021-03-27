@@ -34,6 +34,18 @@ if(isset($_POST['update_post']))
      
     move_uploaded_file($post_image_temp, "../images/$post_image"); 
 
+    if(empty($post_image)) {
+        
+      $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+      $select_image = mysqli_query($connection,$query);
+          
+      while($row = mysqli_fetch_array($select_image)) {
+          
+         $post_image = $row['post_image'];
+      
+      }
+  }
+
     $query = "UPDATE posts SET ";
     $query .="post_title  = '{$post_title}', ";
     $query .="post_category_id = '{$post_category_id}', ";
@@ -49,17 +61,7 @@ if(isset($_POST['update_post']))
         
     confirmQuery($update_post);
 
-    if(empty($post_image)) {
-        
-        $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
-        $select_image = mysqli_query($connection,$query);
-            
-        while($row = mysqli_fetch_array($select_image)) {
-            
-           $post_image = $row['post_image'];
-        
-        }
-}
+    echo "<p class='bg-success'>Post Updated. <a href='../post.php?p_id=$the_post_id '>View Post</a> or <a href='posts.php'>Edit More Posts</a></p>";
 }
 ?>
 
@@ -94,10 +96,23 @@ if(isset($_POST['update_post']))
       </div> 
 
       <div class="form-group">
-      <label for="post_status">Post Status</label>
-      <input type="text" class="form-control" name="post_status" value='<?php echo $post_status; ?>'>
+        <select name="post_status" id="">
+          <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
+
+          <?php 
+          if($post_status=='Published')
+          {
+            echo "<option value='Draft'>Draft</option>";
+          
+          }
+          else{
+            echo "<option value='Published'>Publish</option>";
+
+          }
+          ?>
+        </select>
       </div>
-     
+
      
      
       <div class="form-group">
