@@ -1,29 +1,32 @@
 <?php include "includes/admin_header.php" ?>
-<?php
+
+<?php 
 if(isset($_SESSION['username']))
 {
+$username=$_SESSION['username'];
 
-    $username = $_SESSION['username'];
-    $query = "SELECT * FROM users WHERE username = '{$username}'";
-    $select_user_profile_query = mysqli_query($connection, $query);
+$query= "SELECT * FROM users WHERE username='{$username}' ";
 
-    while($row = mysqli_fetch_array($select_user_profile_query))
-    {
-        $user_id= $row["user_id"];
-        $username= $row["username"];
-        $user_password= $row["user_password"];
-        $user_firstname= $row["user_firstname"];
-        $user_lastname= $row["user_lastname"];
-        $user_email= $row["user_email"];
-        $user_image= $row["user_image"];
-        $user_role= $row["user_role"];
-    }
+$select_user_profile_query = mysqli_query($connection, $query);
 
+while($row= mysqli_fetch_array($select_user_profile_query))
+{
+    $user_id= $row["user_id"];
+    $username= $row["username"];
+    $user_password= $row["user_password"];
+    $user_firstname= $row["user_firstname"];
+    $user_lastname= $row["user_lastname"];
+    $user_email= $row["user_email"];
+    $user_image= $row["user_image"];
+    $user_role= $row["user_role"];
+}
 }
 
-
 ?>
-<?php
+
+
+<?php 
+
 if(isset($_POST['edit_user'])) {
    
     $user_firstname = $_POST['user_firstname'];
@@ -56,8 +59,8 @@ $query .= "WHERE username = '{$username}' ";
   confirmQuery($edit_user_query);
 }   
 
-?>
 
+?>
 <div id="wrapper">
   <!-- Navigation -->
 <?php include "includes/admin_navigation.php" ?>
@@ -71,7 +74,8 @@ $query .= "WHERE username = '{$username}' ";
             <small>Author   </small>
           </h1>
 
-          <form action="" method="post" enctype="multipart/form-data">    
+<!-- FORM -->
+<form action="" method="post" enctype="multipart/form-data">    
     <div class="form-group">
        <label for="user_firstname">Firstname</label>
        <input type="text" class="form-control" name="user_firstname" value="<?php echo $user_firstname; ?>">     
@@ -128,7 +132,12 @@ $query .= "WHERE username = '{$username}' ";
         <input class="btn btn-primary" type="submit" name="edit_user" value="Update Profile">
     </div>
 </form>
-    
+<!-- FORM END -->
+
+
+
+
+
 
         </div>
       </div>

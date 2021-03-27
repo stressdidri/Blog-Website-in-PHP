@@ -12,7 +12,13 @@
         <div class="col-md-8">
 
 <?php 
-$query = "SELECT * FROM posts";
+if(isset($_GET['category']))
+{
+   $post_category_id=$_GET['category'];
+}
+
+
+$query = "SELECT * FROM posts where post_category_id = $post_category_id";
 $select_all_posts_query = mysqli_query($connection,$query);
 while($row=mysqli_fetch_assoc($select_all_posts_query))
 {
@@ -22,10 +28,6 @@ while($row=mysqli_fetch_assoc($select_all_posts_query))
     $post_date= $row["post_date"];
     $post_image= $row["post_image"];
     $post_content= substr($row["post_content"],0,240);
-    $post_status= $row["post_status"];
-    if($post_status=='Published')
-    {
-
 
 ?>
 <!-- HTML Part to Display -->
@@ -37,24 +39,22 @@ while($row=mysqli_fetch_assoc($select_all_posts_query))
             <span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?>
           </p>
           <hr />
-          <a href="post.php?p_id=<?php echo $post_id ?>">
           <img
             class="img-responsive"
             src="images/<?php echo $post_image ?>"
             alt=""
-          /></a>
+          />
           <hr />
           <p>
           <?php echo $post_content  ?>
           </p>
-          <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">
+          <a class="btn btn-primary" href="#">
             Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
           <hr />
 <!-- END Display HTML PART-->
 
 <!-- Closing Braces-->
 <?php
-}
 }
 ?>      
         </div>
