@@ -29,10 +29,9 @@ while($row=mysqli_fetch_assoc($select_all_posts_query))
 
 ?>
 <!-- HTML Part to Display -->
-          <h1 class="page-header">Page Heading<small>Secondary Text</small></h1>
           <!-- First Blog Post -->
           <h2><a href="post.php?p_id=<?php echo $post_id ?>"><?php echo $post_title ?></a></h2>
-          <p class="lead">by <a href="index.php"><?php echo $post_author ?></a></p>
+          <p class="lead">by <?php echo $post_author ?></p>
           <p>
             <span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?>
           </p>

@@ -59,4 +59,3 @@ while($row=mysqli_fetch_assoc($select_categories_sidebar))
           <!-- Side Widget Well -->
 
         </div>
-<?php include "widget.php" ?>
